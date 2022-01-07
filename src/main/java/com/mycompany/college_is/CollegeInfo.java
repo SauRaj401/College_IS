@@ -133,9 +133,13 @@ public class CollegeInfo extends javax.swing.JFrame {
 
         jRadioButton1.setText("Yes");
 
-        jRadioButton2.setText("Nio");
+        jRadioButton2.setText("No");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\New Folder\\College_IS\\src\\main\\java\\com\\mycompany\\icons\\add.png")); // NOI18N
         jButton1.setText("Add to tables");
 
         jButton2.setText("Clear table");
@@ -377,6 +381,10 @@ public class CollegeInfo extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     /**
      * @param args the command line arguments
