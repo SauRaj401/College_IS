@@ -62,6 +62,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("College Information System");
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
