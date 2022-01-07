@@ -130,10 +130,9 @@ public class CollegeInfo extends javax.swing.JFrame {
 
         jRadioButton2.setText("Nio");
 
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\EmerginCoursework\\College_IS\\src\\main\\java\\com\\mycompany\\icons\\add.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("D:\\New Folder\\College_IS\\src\\main\\java\\com\\mycompany\\icons\\add.png")); // NOI18N
         jButton1.setText("Add to tables");
 
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\EmerginCoursework\\College_IS\\src\\main\\java\\com\\mycompany\\icons\\button.png")); // NOI18N
         jButton2.setText("Clear table");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -234,7 +233,6 @@ public class CollegeInfo extends javax.swing.JFrame {
 
         jLabel10.setText("Category:");
 
-        jButton4.setIcon(new javax.swing.ImageIcon("D:\\EmerginCoursework\\College_IS\\src\\main\\java\\com\\mycompany\\icons\\magnifying-glass.png")); // NOI18N
         jButton4.setText("Search college by category");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,7 +240,6 @@ public class CollegeInfo extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon("D:\\EmerginCoursework\\College_IS\\src\\main\\java\\com\\mycompany\\icons\\magnifying-glass.png")); // NOI18N
         jButton3.setText("Search college by fee");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
