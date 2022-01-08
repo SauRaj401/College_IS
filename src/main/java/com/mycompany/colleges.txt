@@ -1,0 +1,2 @@
+Collage ID , Collage Name,Courses, Collage Category, Affilitation, Fee, Scholorship
+1 / Informatics College (ICP)/ (BIT,BBA) / (IT,Management) College / London Metropolitan University / 820000 / Yes

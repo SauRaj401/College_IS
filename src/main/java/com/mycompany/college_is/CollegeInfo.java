@@ -24,7 +24,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         ShowData();
     }
     public void ShowData(){
-        String filePath = "C:\\Users\\saurav sunar\\Dropbox\\My PC (LAPTOP-4167PVT1)\\Desktop\\programming\\raj.txt";
+        String filePath = "D:\\New Folder\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
         File file = new File(filePath);
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));
