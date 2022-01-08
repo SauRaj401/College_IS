@@ -4,6 +4,12 @@
  */
 package com.mycompany.college_is;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author saurav sunar
@@ -15,6 +21,34 @@ public class CollegeInfo extends javax.swing.JFrame {
      */
     public CollegeInfo() {
         initComponents();
+        ShowData();
+    }
+    public void ShowData(){
+        String filePath = "C:\\Users\\saurav sunar\\Dropbox\\My PC (LAPTOP-4167PVT1)\\Desktop\\programming\\raj.txt";
+        File file = new File(filePath);
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String firstLine = br.readLine().trim();
+            String[] columnsName = firstLine.split(",");
+            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+            
+             model.setColumnIdentifiers(columnsName);
+              // get lines from txt file
+            Object[] tableLines = br.lines().toArray();
+            
+            // extratct data from lines
+            // set data to jtable model
+            for(int i = 0; i < tableLines.length; i++)
+            {
+                String line = tableLines[i].toString().trim();
+                String[] dataRow = line.split("/");
+                model.addRow(dataRow);
+            }
+            
+             
+        }catch(Exception ex){
+            Logger.getLogger(filePath);
+        }
     }
 
     /**
