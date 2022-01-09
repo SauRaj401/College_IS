@@ -87,7 +87,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         radioButton = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         addButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        clearButton = new javax.swing.JButton();
         comboCategory = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         collegeCourse = new javax.swing.JTextField();
@@ -95,8 +95,8 @@ public class CollegeInfo extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         feeSearch = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        sortButton = new javax.swing.JButton();
+        searchFeeButton = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -104,8 +104,8 @@ public class CollegeInfo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
+        exitButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -215,11 +215,11 @@ public class CollegeInfo extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton2.setText("Clear table");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        clearButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        clearButton.setText("Clear table");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                clearButtonActionPerformed(evt);
             }
         });
 
@@ -282,7 +282,7 @@ public class CollegeInfo extends javax.swing.JFrame {
                                 .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -325,7 +325,7 @@ public class CollegeInfo extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addButton)
-                    .addComponent(jButton2))
+                    .addComponent(clearButton))
                 .addGap(45, 45, 45))
         );
 
@@ -344,19 +344,19 @@ public class CollegeInfo extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel10.setText("Category:");
 
-        jButton4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton4.setText("Search college by category");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        sortButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        sortButton.setText("Search college by category");
+        sortButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                sortButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton3.setText("Search college by fee");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        searchFeeButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        searchFeeButton.setText("Search college by fee");
+        searchFeeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                searchFeeButtonActionPerformed(evt);
             }
         });
 
@@ -387,9 +387,9 @@ public class CollegeInfo extends javax.swing.JFrame {
                 .addGap(67, 67, 67))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
-                .addComponent(jButton3)
+                .addComponent(searchFeeButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(sortButton)
                 .addGap(53, 53, 53))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(263, 263, 263)
@@ -409,8 +409,8 @@ public class CollegeInfo extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(searchFeeButton)
+                    .addComponent(sortButton))
                 .addContainerGap())
         );
 
@@ -446,17 +446,17 @@ public class CollegeInfo extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButton5.setText("Delete Row");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        deleteButton.setText("Delete Row");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                deleteButtonActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Exit");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        exitButton.setText("Exit");
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                exitButtonActionPerformed(evt);
             }
         });
 
@@ -466,9 +466,9 @@ public class CollegeInfo extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(241, 241, 241)
-                .addComponent(jButton5)
+                .addComponent(deleteButton)
                 .addGap(52, 52, 52)
-                .addComponent(jButton6)
+                .addComponent(exitButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -476,8 +476,8 @@ public class CollegeInfo extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(0, 5, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(exitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -595,7 +595,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_feeSearchActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void sortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortButtonActionPerformed
         // TODO add your handling code here:
         
         
@@ -622,7 +622,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, message, "Category Search", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_sortButtonActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -749,7 +749,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         // TODO add your handling code here:
         
         
@@ -759,7 +759,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "The table cleared!", "Emtpy Table", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_clearButtonActionPerformed
 
    private double BinarySearch(double[] a, double x) { 
  //data array is passed to a array.
@@ -780,7 +780,7 @@ public class CollegeInfo extends javax.swing.JFrame {
  }
  return -1;
  }
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void searchFeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFeeButtonActionPerformed
         // TODO add your handling code here:
          //Fee search button
         DefaultTableModel defaultTableModel = (DefaultTableModel) jTable1.getModel();
@@ -833,14 +833,14 @@ searchIndex))
         JOptionPane.showMessageDialog(this, "The search result couldn't be found!!!", "Sorry", 
 JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_searchFeeButtonActionPerformed
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jMenu3ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
         
         
@@ -851,12 +851,12 @@ JOptionPane.WARNING_MESSAGE);
         }catch(Exception ex){
             JOptionPane.showMessageDialog(rootPane, "!! Select a valid row !!");
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_exitButtonActionPerformed
 
     private void jMenu3MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu3MenuSelected
         // TODO add your handling code here:
@@ -897,18 +897,16 @@ JOptionPane.WARNING_MESSAGE);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton clearButton;
     private javax.swing.JTextField collegeCourse;
     private javax.swing.JTextField collegeID;
     private javax.swing.JTextField collegeName;
     private javax.swing.JComboBox<String> comboAffillitation;
     private javax.swing.JComboBox<String> comboCategory;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton exitButton;
     private javax.swing.JTextField fee;
     private javax.swing.JTextField feeSearch;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -942,5 +940,7 @@ JOptionPane.WARNING_MESSAGE);
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JRadioButton radioButton;
+    private javax.swing.JButton searchFeeButton;
+    private javax.swing.JButton sortButton;
     // End of variables declaration//GEN-END:variables
 }
