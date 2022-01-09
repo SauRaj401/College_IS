@@ -7,8 +7,6 @@ package com.mycompany.college_is;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,9 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -36,7 +32,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         ShowData();
     }
     public void ShowData(){
-        String filePath = "D:\\New Folder\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
+        String filePath = "F:\\CW final\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
         File file = new File(filePath);
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -90,7 +86,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         comboAffillitation = new javax.swing.JComboBox<>();
         radioButton = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         comboCategory = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
@@ -211,17 +207,15 @@ public class CollegeInfo extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\add.png")); // NOI18N
-        jButton1.setText("Add to tables");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        addButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        addButton.setText("Add to tables");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                addButtonActionPerformed(evt);
             }
         });
 
         jButton2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\cross button.png")); // NOI18N
         jButton2.setText("Clear table");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,7 +273,7 @@ public class CollegeInfo extends javax.swing.JFrame {
                 .addContainerGap(90, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(addButton)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(28, 28, 28)
@@ -330,7 +324,7 @@ public class CollegeInfo extends javax.swing.JFrame {
                     .addComponent(jRadioButton2))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(addButton)
                     .addComponent(jButton2))
                 .addGap(45, 45, 45))
         );
@@ -351,7 +345,6 @@ public class CollegeInfo extends javax.swing.JFrame {
         jLabel10.setText("Category:");
 
         jButton4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\search.png")); // NOI18N
         jButton4.setText("Search college by category");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -360,7 +353,6 @@ public class CollegeInfo extends javax.swing.JFrame {
         });
 
         jButton3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\search.png")); // NOI18N
         jButton3.setText("Search college by fee");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -454,7 +446,6 @@ public class CollegeInfo extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButton5.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\delete(1).png")); // NOI18N
         jButton5.setText("Delete Row");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -462,7 +453,6 @@ public class CollegeInfo extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\cross button.png")); // NOI18N
         jButton6.setText("Exit");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -650,7 +640,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         
         
         // Radio button if else statement
@@ -673,7 +663,7 @@ public class CollegeInfo extends javax.swing.JFrame {
             }else{
                 DefaultTableModel tm = (DefaultTableModel)jTable1.getModel();
                 
-                if(Integer.parseInt(collegeID.getText()) <1)
+                if(Integer.parseInt(collegeID.getText()) <=7)
                 {
                 JOptionPane.showMessageDialog(this, "Similar id found in records." + "\n Please enter unique ID for each College");
                 
@@ -697,12 +687,12 @@ public class CollegeInfo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Input the correct value");
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addButtonActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         
-        String filePath = "D:\\New Folder\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
+        String filePath = "F:\\CW final\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
         File file = new File(filePath);
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -732,7 +722,7 @@ public class CollegeInfo extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        String filePath = "D:\\New Folder\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
+        String filePath = "F:\\CW final\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
         File file = new File(filePath);
         try {
             FileWriter fw = new FileWriter(filePath);
@@ -905,6 +895,7 @@ JOptionPane.WARNING_MESSAGE);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField collegeCourse;
     private javax.swing.JTextField collegeID;
@@ -913,7 +904,6 @@ JOptionPane.WARNING_MESSAGE);
     private javax.swing.JComboBox<String> comboCategory;
     private javax.swing.JTextField fee;
     private javax.swing.JTextField feeSearch;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

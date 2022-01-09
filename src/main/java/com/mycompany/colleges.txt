@@ -1,2 +1,7 @@
-Collage ID , Collage Name,Courses, Collage Category, Affilitation, Fee, Scholorship
-1 / Informatics College (ICP)/ (BIT,BBA) / (IT,Management) College / London Metropolitan University / 820000 / Yes
+1/Informatics College/BIT,BBA/IT,Management College/London Metropolitan University/810000/Yes/
+2/Kanya Campus/ BIM,BBA,BBS / Womens College / Tribhuvan University / 500000 / Yes/
+3/Sagramatha College/+2 Science,Management/Private College/Tribhuvan University/150000/No/
+4/Gandaki Medical College/MBBS/Medical College/Pokhara University/5000000/Yes/
+5/NTHMC College/BHM / Management College / Pokhara University/ 700000/ No/
+6/ISMT/ BIT/ IT College/ University of Sunderland/950000/Yes/
+7/Janapriya Multiple Campus/BHM,BBA,BBS/Management College/Tribhuvan University/400000/Yes/
