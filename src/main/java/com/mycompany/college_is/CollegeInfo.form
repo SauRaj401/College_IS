@@ -453,6 +453,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Clear table"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="comboCategory">
           <Properties>
@@ -461,7 +464,7 @@
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="7">
-                <StringItem index="0" value="IT/Management College"/>
+                <StringItem index="0" value="IT,Management College"/>
                 <StringItem index="1" value="IT College"/>
                 <StringItem index="2" value="Women&#x2019;s College"/>
                 <StringItem index="3" value="Private College"/>
@@ -609,7 +612,7 @@
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="7">
-                <StringItem index="0" value="IT/Management College"/>
+                <StringItem index="0" value="IT,Management College"/>
                 <StringItem index="1" value="IT College"/>
                 <StringItem index="2" value="Women&#x2019;s College"/>
                 <StringItem index="3" value="Private College"/>

@@ -10,11 +10,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -208,9 +210,14 @@ public class CollegeInfo extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButton2.setText("Clear table");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         comboCategory.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        comboCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IT/Management College", "IT College", "Women’s College", "Private College", "Professional College", "Management College", "Medical College" }));
+        comboCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IT,Management College", "IT College", "Women’s College", "Private College", "Professional College", "Management College", "Medical College" }));
         comboCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboCategoryActionPerformed(evt);
@@ -342,7 +349,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         jButton3.setText("Search college by fee");
 
         jComboBox1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IT/Management College", "IT College", "Women’s College", "Private College", "Professional College", "Management College", "Medical College" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IT,Management College", "IT College", "Women’s College", "Private College", "Professional College", "Management College", "Medical College" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -501,6 +508,31 @@ public class CollegeInfo extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        
+        
+        String category = jComboBox1.getSelectedItem().toString();
+        ArrayList<Integer>categoryList = new ArrayList();
+        for (int i = 0; i < jTable1.getRowCount(); i++) {
+            if (jTable1.getModel().getValueAt(i, 3).equals(category)) {
+                //get the all row values at column index 0
+                categoryList.add(i);
+            }
+        }
+        
+        ArrayList<String> colleges = new ArrayList<>();
+        for (int i : categoryList) {
+            colleges.add(jTable1.getValueAt(i, 1).toString());
+        }
+        int totalCollege = colleges.size();
+        String message = "There are " + totalCollege + " colleges for the " + category + " category.";
+        for (int i = 0; i < colleges.size(); i++) {
+            message += "\n" + (i + 1) + ". " + colleges.get(i);
+        }
+        if (categoryList.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No College Available for this Category", "Search by Category", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, message, "Category Search", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -542,7 +574,7 @@ public class CollegeInfo extends javax.swing.JFrame {
             }else{
                 DefaultTableModel tm = (DefaultTableModel)jTable1.getModel();
                 
-                if(Integer.parseInt(collegeID.getText()) <=2)
+                if(Integer.parseInt(collegeID.getText()) <1)
                 {
                 JOptionPane.showMessageDialog(this, "Similar id found in records." + "\n Please enter unique ID for each College");
                 
@@ -601,6 +633,18 @@ public class CollegeInfo extends javax.swing.JFrame {
         
         System.exit(0);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        DefaultTableModel defaultTableModel = (DefaultTableModel) jTable1.getModel();
+        if (jTable1.getRowCount() != 0) {
+            defaultTableModel.setNumRows(0);
+        } else {
+            JOptionPane.showMessageDialog(this, "The table cleared!", "Emtpy Table", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
