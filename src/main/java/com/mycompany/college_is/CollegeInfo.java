@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -96,7 +97,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        feeSearch = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -345,8 +346,13 @@ public class CollegeInfo extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton3.setText("Search college by fee");
+        feeSearch.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        feeSearch.setText("Search college by fee");
+        feeSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                feeSearchActionPerformed(evt);
+            }
+        });
 
         jComboBox1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IT,Management College", "IT College", "Women’s College", "Private College", "Professional College", "Management College", "Medical College" }));
@@ -371,7 +377,7 @@ public class CollegeInfo extends javax.swing.JFrame {
                         .addComponent(jLabel10))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(feeSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
@@ -395,7 +401,7 @@ public class CollegeInfo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4)
-                    .addComponent(jButton3))
+                    .addComponent(feeSearch))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -646,6 +652,80 @@ public class CollegeInfo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+        private double BinarySearch(double[] a, double x) { 
+ //data array is passed to a array.
+ Arrays.sort(a);//sorting the value in ascending order
+ System.out.println(Arrays.toString(a));
+ int Size = a.length;
+ int start = 0;
+ int end = Size - 1;
+ while (start <= end) {
+ int mid = (start + end) / 2;
+ if (a[mid] == x) {
+ return a[mid];
+ } else if (x > a[mid]) {
+ start = mid + 1;
+ } else {
+ end = mid - 1;
+ }
+ }
+ return -1;
+ }
+    private void feeSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feeSearchActionPerformed
+        // TODO add your handling code here:
+         DefaultTableModel defaultTableModel = (DefaultTableModel) jTable1.getModel();
+        int rows = defaultTableModel.getRowCount();
+        int searchIndex = 5;
+        String search = feeSearch.getText();
+        int datarows = 0;
+        for (int i = 0; i < rows; i++) {
+        if ((defaultTableModel.getValueAt(i, searchIndex)) == null) {
+        break;
+ }
+         datarows++;
+        }
+        if (!"".equals(search) && datarows != 0) {
+        double searchAppliance = Double.parseDouble(feeSearch.getText());
+        double data[] = new double[datarows];
+        for (int i = 0; i < datarows; i++) {
+ String a = (String) defaultTableModel.getValueAt(i, searchIndex);
+ data[i] = Double.parseDouble(a);
+        }
+  System.out.println(Arrays.toString(data));
+   double searchResult = BinarySearch(data, searchAppliance);
+    System.out.println(searchResult);
+    if (searchResult != -1) {
+        for (int i = 0; i < defaultTableModel.getRowCount(); i++) {
+            if (Double.parseDouble((String) defaultTableModel.getValueAt(i, 
+searchIndex))
+ == searchResult){
+            String collegeid = (String) defaultTableModel.getValueAt(i, 0);
+            String collegename = (String) defaultTableModel.getValueAt(i, 1);
+            String category = (String) defaultTableModel.getValueAt(i, 2);
+            String affillitation = (String) defaultTableModel.getValueAt(i, 3);
+            String fee = (String) defaultTableModel.getValueAt(i, 4);
+            String scholorship = (String) defaultTableModel.getValueAt(i, 5);
+            
+            JOptionPane.showMessageDialog(this, "Search Found\n\n: "+ fee 
+                    + "\nCollege ID: " + collegeid 
+                    + "\nCollege Name: " + collegename 
+                    + "\nCategory: "+ category 
+                    + "\nAffiliation:: "+ affillitation,
+                        "Search Result", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            }
+        }
+        }else{
+    JOptionPane.showMessageDialog(this, "The search result couldn't be found!!!", 
+"Sorry", JOptionPane.WARNING_MESSAGE);
+    }
+    
+        }else{
+        JOptionPane.showMessageDialog(this, "The search result couldn't be found!!!", "Sorry", 
+JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_feeSearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -689,9 +769,9 @@ public class CollegeInfo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboAffillitation;
     private javax.swing.JComboBox<String> comboCategory;
     private javax.swing.JTextField fee;
+    private javax.swing.JButton feeSearch;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
