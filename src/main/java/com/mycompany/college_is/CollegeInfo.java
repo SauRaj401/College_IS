@@ -94,10 +94,10 @@ public class CollegeInfo extends javax.swing.JFrame {
         collegeCourse = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        feeSearch = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        feeSearch = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -329,9 +329,9 @@ public class CollegeInfo extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel9.setText("Fee:");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        feeSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                feeSearchActionPerformed(evt);
             }
         });
 
@@ -346,11 +346,11 @@ public class CollegeInfo extends javax.swing.JFrame {
             }
         });
 
-        feeSearch.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        feeSearch.setText("Search college by fee");
-        feeSearch.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton3.setText("Search college by fee");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                feeSearchActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -372,12 +372,12 @@ public class CollegeInfo extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(jLabel9)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(feeSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel10))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(feeSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
@@ -397,11 +397,11 @@ public class CollegeInfo extends javax.swing.JFrame {
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel9)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(feeSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4)
-                    .addComponent(feeSearch))
+                    .addComponent(jButton3))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -508,9 +508,9 @@ public class CollegeInfo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void feeSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feeSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_feeSearchActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -652,7 +652,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-        private double BinarySearch(double[] a, double x) { 
+   private double BinarySearch(double[] a, double x) { 
  //data array is passed to a array.
  Arrays.sort(a);//sorting the value in ascending order
  System.out.println(Arrays.toString(a));
@@ -671,9 +671,10 @@ public class CollegeInfo extends javax.swing.JFrame {
  }
  return -1;
  }
-    private void feeSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feeSearchActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel defaultTableModel = (DefaultTableModel) jTable1.getModel();
+         //Fee search button
+        DefaultTableModel defaultTableModel = (DefaultTableModel) jTable1.getModel();
         int rows = defaultTableModel.getRowCount();
         int searchIndex = 5;
         String search = feeSearch.getText();
@@ -724,7 +725,7 @@ searchIndex))
         JOptionPane.showMessageDialog(this, "The search result couldn't be found!!!", "Sorry", 
 JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_feeSearchActionPerformed
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -734,24 +735,8 @@ JOptionPane.WARNING_MESSAGE);
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CollegeInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CollegeInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CollegeInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CollegeInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+         *
+     
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -769,9 +754,10 @@ JOptionPane.WARNING_MESSAGE);
     private javax.swing.JComboBox<String> comboAffillitation;
     private javax.swing.JComboBox<String> comboCategory;
     private javax.swing.JTextField fee;
-    private javax.swing.JButton feeSearch;
+    private javax.swing.JTextField feeSearch;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -800,7 +786,6 @@ JOptionPane.WARNING_MESSAGE);
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JRadioButton radioButton;
     // End of variables declaration//GEN-END:variables
 }
