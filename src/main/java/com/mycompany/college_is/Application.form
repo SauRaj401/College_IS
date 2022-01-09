@@ -129,7 +129,7 @@
                   <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" pref="19" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" pref="9" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -172,7 +172,7 @@
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\saurav sunar\Dropbox\My PC (LAPTOP-4167PVT1)\Desktop\search.png"/>
+              <Image iconType="3" name="/com/mycompany/college_is/sd.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Search college"/>
           </Properties>
