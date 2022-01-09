@@ -446,8 +446,18 @@ public class CollegeInfo extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
 
         jButton5.setText("Delete Row");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Exit");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -463,7 +473,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(0, 11, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5)
                     .addComponent(jButton6))
@@ -748,12 +758,11 @@ searchIndex))
  == searchResult){
             String collegeid = (String) defaultTableModel.getValueAt(i, 0);
             String collegename = (String) defaultTableModel.getValueAt(i, 1);
-            String category = (String) defaultTableModel.getValueAt(i, 2);
-            String affillitation = (String) defaultTableModel.getValueAt(i, 3);
-            String fee = (String) defaultTableModel.getValueAt(i, 4);
-            String scholorship = (String) defaultTableModel.getValueAt(i, 5);
+            String category = (String) defaultTableModel.getValueAt(i, 3);
+            String affillitation = (String) defaultTableModel.getValueAt(i, 4);
+            String fee = (String) defaultTableModel.getValueAt(i, 5);
             
-            JOptionPane.showMessageDialog(this, "Search Found\n\n: "+ fee 
+            JOptionPane.showMessageDialog(this, "Search Found\n"  + "Fee: " + fee 
                     + "\nCollege ID: " + collegeid 
                     + "\nCollege Name: " + collegename 
                     + "\nCategory: "+ category 
@@ -776,6 +785,24 @@ JOptionPane.WARNING_MESSAGE);
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        
+        
+         DefaultTableModel defaultTableModel = (DefaultTableModel)jTable1.getModel();
+        try{
+        int SelectedRowIndex = jTable1.getSelectedRow();
+        defaultTableModel.removeRow(SelectedRowIndex);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(rootPane, "!! Select a valid row !!");
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
