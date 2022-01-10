@@ -473,7 +473,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="D:\Emerging Coursework\College_IS\src\main\java\com\mycompany\college_is\add.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Add to tables"/>
+            <Property name="text" type="java.lang.String" value="Add to table"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addButtonActionPerformed"/>

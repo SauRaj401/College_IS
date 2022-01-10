@@ -207,7 +207,7 @@ public class CollegeInfo extends javax.swing.JFrame {
 
         addButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         addButton.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\add.png")); // NOI18N
-        addButton.setText("Add to tables");
+        addButton.setText("Add to table");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
@@ -790,21 +790,21 @@ public class CollegeInfo extends javax.swing.JFrame {
             datarows++;
         }
         if (!"".equals(search) && datarows != 0) {
-            double searchAppliance = Double.parseDouble(feeSearch.getText());
+            double searchColleges = Double.parseDouble(feeSearch.getText());
             double data[] = new double[datarows];
             for (int i = 0; i < datarows; i++) {
                 String a = (String) defaultTableModel.getValueAt(i, searchIndex);
                 data[i] = Double.parseDouble(a);
             }
             System.out.println(Arrays.toString(data));
-            double searchResult = BinarySearch(data, searchAppliance);
+            double searchResult = BinarySearch(data, searchColleges);
             System.out.println(searchResult);
             if (searchResult != -1) {
                 for (int i = 0; i < defaultTableModel.getRowCount(); i++) {
                     if (Double.parseDouble((String) defaultTableModel.getValueAt(i,
                             searchIndex))
                             == searchResult) {
-                        String collegeid = (String) defaultTableModel.getValueAt(i, 0);
+                        int collegeid = (int) defaultTableModel.getValueAt(i, 0);
                         String collegename = (String) defaultTableModel.getValueAt(i, 1);
                         String category = (String) defaultTableModel.getValueAt(i, 3);
                         String affillitation = (String) defaultTableModel.getValueAt(i, 4);
