@@ -185,7 +185,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         fee.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         comboAffillitation.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        comboAffillitation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "University of Sunderland", "London Metropolitan University", "Tribhuvan University", "Pokhara University" }));
+        comboAffillitation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "University of Sunderland", "London Metropolitan University", "Tribhuvan University", "Pokhara University", "Far Western University", "Kathmandu University" }));
 
         buttonGroup1.add(radioButton);
         radioButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -346,7 +346,7 @@ public class CollegeInfo extends javax.swing.JFrame {
 
         sortButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         sortButton.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\search.png")); // NOI18N
-        sortButton.setText("Search college by category");
+        sortButton.setText("College available in Category");
         sortButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortButtonActionPerformed(evt);
@@ -355,7 +355,7 @@ public class CollegeInfo extends javax.swing.JFrame {
 
         searchFeeButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         searchFeeButton.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\search.png")); // NOI18N
-        searchFeeButton.setText("Search college by fee");
+        searchFeeButton.setText("Search College");
         searchFeeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchFeeButtonActionPerformed(evt);
@@ -665,7 +665,7 @@ public class CollegeInfo extends javax.swing.JFrame {
             } else {
                 DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
 
-                if (Integer.parseInt(collegeID.getText()) <= 7) {
+                if (Integer.parseInt(collegeID.getText()) <= 12) {
                     JOptionPane.showMessageDialog(this, "Similar id found in records." + "\n Please enter unique ID for each College");
 
                 } else {

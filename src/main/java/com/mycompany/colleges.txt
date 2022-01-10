@@ -5,3 +5,8 @@
 5/NTHMC College/BHM / Management College / Pokhara University/ 700000/ No/
 6/ISMT/ BIT/ IT College/ University of Sunderland/950000/Yes/
 7/Janapriya Multiple Campus/BHM,BBA,BBS/Management College/Tribhuvan University/400000/Yes/
+8/ Casbain Valley College / BBS / Management College/ Tribhuvan University/ 600000 / No
+9/ Triveni Multiple Campus / BBA,BBS,BHM / Management College / Far-Western University / 750000 / Yes
+10/ ACME Engineering College / Private College /BE(Civil,Computer, Arch.)/ Tribhuvan University / 1200000/ Yes
+11/ Advanced Academy and Republic College/ IT College /BSc.Cs IT, BSc. Physics/ Kathmandu University/ 850000/ Yes
+12/ Jayprithvi Multiple Campus / BBA,BBS /Management College / Far-Western University / 650000 / No

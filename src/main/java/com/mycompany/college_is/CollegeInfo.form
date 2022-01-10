@@ -425,11 +425,13 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="6">
                 <StringItem index="0" value="University of Sunderland"/>
                 <StringItem index="1" value="London Metropolitan University"/>
                 <StringItem index="2" value="Tribhuvan University"/>
                 <StringItem index="3" value="Pokhara University"/>
+                <StringItem index="4" value="Far Western University"/>
+                <StringItem index="5" value="Kathmandu University"/>
               </StringArray>
             </Property>
           </Properties>
@@ -624,7 +626,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="D:\Emerging Coursework\College_IS\src\main\java\com\mycompany\college_is\search.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Search college by category"/>
+            <Property name="text" type="java.lang.String" value="College available in Category"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sortButtonActionPerformed"/>
@@ -638,7 +640,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="D:\Emerging Coursework\College_IS\src\main\java\com\mycompany\college_is\search.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Search college by fee"/>
+            <Property name="text" type="java.lang.String" value="Search College"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchFeeButtonActionPerformed"/>
