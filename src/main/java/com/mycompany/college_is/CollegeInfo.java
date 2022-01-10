@@ -804,7 +804,7 @@ public class CollegeInfo extends javax.swing.JFrame {
                     if (Double.parseDouble((String) defaultTableModel.getValueAt(i,
                             searchIndex))
                             == searchResult) {
-                        int collegeid = (int) defaultTableModel.getValueAt(i, 0);
+                        String collegeid = (String) defaultTableModel.getValueAt(i, 0);
                         String collegename = (String) defaultTableModel.getValueAt(i, 1);
                         String category = (String) defaultTableModel.getValueAt(i, 3);
                         String affillitation = (String) defaultTableModel.getValueAt(i, 4);
