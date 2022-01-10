@@ -17,7 +17,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 /**
  *
  * @author saurav sunar
@@ -31,30 +30,29 @@ public class CollegeInfo extends javax.swing.JFrame {
         initComponents();
         ShowData();
     }
-    public void ShowData(){
-        String filePath = "F:\\CW final\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
+
+    public void ShowData() {
+        String filePath = "D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
         File file = new File(filePath);
-        try{
+        try {
             BufferedReader br = new BufferedReader(new FileReader(file));
-           // String firstLine = br.readLine().trim();
-           // String[] columnsName = firstLine.split(",");
-            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-            
-             //model.setColumnIdentifiers(columnsName);
-              // get lines from txt file
+            // String firstLine = br.readLine().trim();
+            // String[] columnsName = firstLine.split(",");
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            //model.setColumnIdentifiers(columnsName);
+            // get lines from txt file
             Object[] tableLines = br.lines().toArray();
-            
+
             // extratct data from lines
             // set data to jtable model
-            for(int i = 0; i < tableLines.length; i++)
-            {
+            for (int i = 0; i < tableLines.length; i++) {
                 String line = tableLines[i].toString().trim();
                 String[] dataRow = line.split("/");
                 model.addRow(dataRow);
             }
-            
-             
-        }catch(Exception ex){
+
+        } catch (Exception ex) {
             Logger.getLogger(filePath);
         }
     }
@@ -208,6 +206,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         });
 
         addButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        addButton.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\add.png")); // NOI18N
         addButton.setText("Add to tables");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,6 +215,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         });
 
         clearButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        clearButton.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\cross button.png")); // NOI18N
         clearButton.setText("Clear table");
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,6 +345,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         jLabel10.setText("Category:");
 
         sortButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        sortButton.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\search.png")); // NOI18N
         sortButton.setText("Search college by category");
         sortButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -353,6 +354,7 @@ public class CollegeInfo extends javax.swing.JFrame {
         });
 
         searchFeeButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        searchFeeButton.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\search.png")); // NOI18N
         searchFeeButton.setText("Search college by fee");
         searchFeeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -446,6 +448,8 @@ public class CollegeInfo extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
 
+        deleteButton.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        deleteButton.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\delete.png")); // NOI18N
         deleteButton.setText("Delete Row");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -453,6 +457,8 @@ public class CollegeInfo extends javax.swing.JFrame {
             }
         });
 
+        exitButton.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        exitButton.setIcon(new javax.swing.ImageIcon("D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\college_is\\cross button.png")); // NOI18N
         exitButton.setText("Exit");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -468,7 +474,7 @@ public class CollegeInfo extends javax.swing.JFrame {
                 .addGap(241, 241, 241)
                 .addComponent(deleteButton)
                 .addGap(52, 52, 52)
-                .addComponent(exitButton)
+                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -597,17 +603,16 @@ public class CollegeInfo extends javax.swing.JFrame {
 
     private void sortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortButtonActionPerformed
         // TODO add your handling code here:
-        
-        
+
         String category = jComboBox1.getSelectedItem().toString();
-        ArrayList<Integer>categoryList = new ArrayList();
+        ArrayList<Integer> categoryList = new ArrayList();
         for (int i = 0; i < jTable1.getRowCount(); i++) {
             if (jTable1.getModel().getValueAt(i, 3).equals(category)) {
                 //get the all row values at column index 0
                 categoryList.add(i);
             }
         }
-        
+
         ArrayList<String> colleges = new ArrayList<>();
         for (int i : categoryList) {
             colleges.add(jTable1.getValueAt(i, 1).toString());
@@ -641,103 +646,94 @@ public class CollegeInfo extends javax.swing.JFrame {
     }//GEN-LAST:event_radioButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        
-        
+
         // Radio button if else statement
         String Scholorship = "";
-        if(radioButton.isSelected()){
+        if (radioButton.isSelected()) {
             Scholorship = "Yes";
-        } 
-        else{
+        } else {
             Scholorship = "No";
         }
-        
-        try{
-            if(collegeID.getText().isEmpty() || collegeName.getText().isEmpty() ||
-             collegeCourse.getText().isEmpty() ||
-             comboCategory.getSelectedItem().equals("") ||
-             comboAffillitation.getSelectedItem().equals("") ||
-             fee.getText().isEmpty())
-            {
+
+        try {
+            if (collegeID.getText().isEmpty() || collegeName.getText().isEmpty()
+                    || collegeCourse.getText().isEmpty()
+                    || comboCategory.getSelectedItem().equals("")
+                    || comboAffillitation.getSelectedItem().equals("")
+                    || fee.getText().isEmpty()) {
                 throw new NoSuchFieldException();
-            }else{
-                DefaultTableModel tm = (DefaultTableModel)jTable1.getModel();
-                
-                if(Integer.parseInt(collegeID.getText()) <=7)
-                {
-                JOptionPane.showMessageDialog(this, "Similar id found in records." + "\n Please enter unique ID for each College");
-                
-                }
-                else{
-                    tm.addRow(new Object[]{collegeID.getText(),collegeName.getText(),
-                        collegeCourse.getText(), comboCategory.getSelectedItem(), 
-                        comboAffillitation.getSelectedItem(),fee.getText(), Scholorship});
+            } else {
+                DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
+
+                if (Integer.parseInt(collegeID.getText()) <= 7) {
+                    JOptionPane.showMessageDialog(this, "Similar id found in records." + "\n Please enter unique ID for each College");
+
+                } else {
+                    tm.addRow(new Object[]{collegeID.getText(), collegeName.getText(),
+                        collegeCourse.getText(), comboCategory.getSelectedItem(),
+                        comboAffillitation.getSelectedItem(), fee.getText(), Scholorship});
                     JOptionPane.showMessageDialog(this, "Data added successfully !!!");
                 }
                 collegeID.setText("");
                 collegeName.setText("");
                 collegeCourse.setText("");
-                fee.setText("");  
+                fee.setText("");
             }
-        }
-        catch(NoSuchFieldException F){
-            JOptionPane.showMessageDialog(this,"Warning! Empty Text Box");
-        }
-        catch(Exception E){
+        } catch (NoSuchFieldException F) {
+            JOptionPane.showMessageDialog(this, "Warning! Empty Text Box");
+        } catch (Exception E) {
             JOptionPane.showMessageDialog(this, "Input the correct value");
         }
-        
+
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        
-        String filePath = "F:\\CW final\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
+
+        String filePath = "D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
         File file = new File(filePath);
-        try{
+        try {
             BufferedReader br = new BufferedReader(new FileReader(file));
-           // String firstLine = br.readLine().trim();
-           // String[] columnsName = firstLine.split(",");
-            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-            
-             //model.setColumnIdentifiers(columnsName);
-              // get lines from txt file
+            // String firstLine = br.readLine().trim();
+            // String[] columnsName = firstLine.split(",");
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            //model.setColumnIdentifiers(columnsName);
+            // get lines from txt file
             Object[] tableLines = br.lines().toArray();
-            
+
             // extratct data from lines
             // set data to jtable model
-            for(int i = 0; i < tableLines.length; i++)
-            {
+            for (int i = 0; i < tableLines.length; i++) {
                 String line = tableLines[i].toString().trim();
                 String[] dataRow = line.split("/");
                 model.addRow(dataRow);
             }
-            
-             
-        }catch(Exception ex){
+
+        } catch (Exception ex) {
             Logger.getLogger(filePath);
         }
-        
+
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        String filePath = "F:\\CW final\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
+        String filePath = "D:\\Emerging Coursework\\College_IS\\src\\main\\java\\com\\mycompany\\colleges.txt";
         File file = new File(filePath);
         try {
             FileWriter fw = new FileWriter(filePath);
             BufferedWriter bw = new BufferedWriter(fw);
-            
-            for(int i = 0; i < jTable1.getRowCount(); i++) {
-                for(int j = 0; j < jTable1.getColumnCount(); j++) {
-                    bw.write(jTable1.getValueAt(i, j).toString()+"/");
+
+            for (int i = 0; i < jTable1.getRowCount(); i++) {
+                for (int j = 0; j < jTable1.getColumnCount(); j++) {
+                    bw.write(jTable1.getValueAt(i, j).toString() + "/");
                 }
                 bw.newLine();
-             }
-             bw.close();
+            }
+            bw.close();
             fw.close();
-           JOptionPane.showMessageDialog(rootPane, "Save Successful");
-            
+            JOptionPane.showMessageDialog(rootPane, "Save Successful");
+
         } catch (IOException ex) {
             Logger.getLogger(CollegeInfo.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -745,14 +741,13 @@ public class CollegeInfo extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        
+
         System.exit(0);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         // TODO add your handling code here:
-        
-        
+
         DefaultTableModel defaultTableModel = (DefaultTableModel) jTable1.getModel();
         if (jTable1.getRowCount() != 0) {
             defaultTableModel.setNumRows(0);
@@ -761,77 +756,77 @@ public class CollegeInfo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_clearButtonActionPerformed
 
-   private double BinarySearch(double[] a, double x) { 
- //data array is passed to a array.
- Arrays.sort(a);//sorting the value in ascending order
- System.out.println(Arrays.toString(a));
- int Size = a.length;
- int start = 0;
- int end = Size - 1;
- while (start <= end) {
- int mid = (start + end) / 2;
- if (a[mid] == x) {
- return a[mid];
- } else if (x > a[mid]) {
- start = mid + 1;
- } else {
- end = mid - 1;
- }
- }
- return -1;
- }
+    private double BinarySearch(double[] a, double x) {
+        //data array is passed to a array.
+        Arrays.sort(a);//sorting the value in ascending order
+        System.out.println(Arrays.toString(a));
+        int Size = a.length;
+        int start = 0;
+        int end = Size - 1;
+        while (start <= end) {
+            int mid = (start + end) / 2;
+            if (a[mid] == x) {
+                return a[mid];
+            } else if (x > a[mid]) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return -1;
+    }
     private void searchFeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFeeButtonActionPerformed
         // TODO add your handling code here:
-         //Fee search button
+        //Fee search button
         DefaultTableModel defaultTableModel = (DefaultTableModel) jTable1.getModel();
         int rows = defaultTableModel.getRowCount();
         int searchIndex = 5;
         String search = feeSearch.getText();
         int datarows = 0;
         for (int i = 0; i < rows; i++) {
-        if ((defaultTableModel.getValueAt(i, searchIndex)) == null) {
-        break;
- }
-         datarows++;
-        }
-        if (!"".equals(search) && datarows != 0) {
-        double searchAppliance = Double.parseDouble(feeSearch.getText());
-        double data[] = new double[datarows];
-        for (int i = 0; i < datarows; i++) {
- String a = (String) defaultTableModel.getValueAt(i, searchIndex);
- data[i] = Double.parseDouble(a);
-        }
-  System.out.println(Arrays.toString(data));
-   double searchResult = BinarySearch(data, searchAppliance);
-    System.out.println(searchResult);
-    if (searchResult != -1) {
-        for (int i = 0; i < defaultTableModel.getRowCount(); i++) {
-            if (Double.parseDouble((String) defaultTableModel.getValueAt(i, 
-searchIndex))
- == searchResult){
-            String collegeid = (String) defaultTableModel.getValueAt(i, 0);
-            String collegename = (String) defaultTableModel.getValueAt(i, 1);
-            String category = (String) defaultTableModel.getValueAt(i, 3);
-            String affillitation = (String) defaultTableModel.getValueAt(i, 4);
-            String fee = (String) defaultTableModel.getValueAt(i, 5);
-            
-            JOptionPane.showMessageDialog(this, "Search Found\n"  + "Fee: " + fee 
-                    + "\nCollege ID: " + collegeid 
-                    + "\nCollege Name: " + collegename 
-                    + "\nCategory: "+ category 
-                    + "\nAffiliation:: "+ affillitation,
-                        "Search Result", JOptionPane.INFORMATION_MESSAGE);
+            if ((defaultTableModel.getValueAt(i, searchIndex)) == null) {
                 break;
             }
+            datarows++;
         }
-        }else{
-    JOptionPane.showMessageDialog(this, "The search result couldn't be found!!!", 
-"Sorry", JOptionPane.WARNING_MESSAGE);
-    }
-    
-        }else{
-        JOptionPane.showMessageDialog(this, "The search result couldn't be found!!!", "Sorry", 
-JOptionPane.WARNING_MESSAGE);
+        if (!"".equals(search) && datarows != 0) {
+            double searchAppliance = Double.parseDouble(feeSearch.getText());
+            double data[] = new double[datarows];
+            for (int i = 0; i < datarows; i++) {
+                String a = (String) defaultTableModel.getValueAt(i, searchIndex);
+                data[i] = Double.parseDouble(a);
+            }
+            System.out.println(Arrays.toString(data));
+            double searchResult = BinarySearch(data, searchAppliance);
+            System.out.println(searchResult);
+            if (searchResult != -1) {
+                for (int i = 0; i < defaultTableModel.getRowCount(); i++) {
+                    if (Double.parseDouble((String) defaultTableModel.getValueAt(i,
+                            searchIndex))
+                            == searchResult) {
+                        String collegeid = (String) defaultTableModel.getValueAt(i, 0);
+                        String collegename = (String) defaultTableModel.getValueAt(i, 1);
+                        String category = (String) defaultTableModel.getValueAt(i, 3);
+                        String affillitation = (String) defaultTableModel.getValueAt(i, 4);
+                        String fee = (String) defaultTableModel.getValueAt(i, 5);
+
+                        JOptionPane.showMessageDialog(this, "Search Found\n" + "Fee: " + fee
+                                + "\nCollege ID: " + collegeid
+                                + "\nCollege Name: " + collegename
+                                + "\nCategory: " + category
+                                + "\nAffiliation:: " + affillitation,
+                                "Search Result", JOptionPane.INFORMATION_MESSAGE);
+                        break;
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "The search result couldn't be found!!!",
+                        "Sorry", JOptionPane.WARNING_MESSAGE);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "The search result couldn't be found!!!", "Sorry",
+                    JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_searchFeeButtonActionPerformed
 
@@ -842,13 +837,12 @@ JOptionPane.WARNING_MESSAGE);
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
-        
-        
-         DefaultTableModel defaultTableModel = (DefaultTableModel)jTable1.getModel();
-        try{
-        int SelectedRowIndex = jTable1.getSelectedRow();
-        defaultTableModel.removeRow(SelectedRowIndex);
-        }catch(Exception ex){
+
+        DefaultTableModel defaultTableModel = (DefaultTableModel) jTable1.getModel();
+        try {
+            int SelectedRowIndex = jTable1.getSelectedRow();
+            defaultTableModel.removeRow(SelectedRowIndex);
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, "!! Select a valid row !!");
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
@@ -865,7 +859,7 @@ JOptionPane.WARNING_MESSAGE);
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(rootPane,"Please visit our site to learn about CIS."
+        JOptionPane.showMessageDialog(rootPane, "Please visit our site to learn about CIS."
                 + "\n https://collegeis.com/");
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 

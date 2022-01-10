@@ -470,6 +470,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="0"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\Emerging Coursework\College_IS\src\main\java\com\mycompany\college_is\add.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Add to tables"/>
           </Properties>
           <Events>
@@ -480,6 +483,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="0"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\Emerging Coursework\College_IS\src\main\java\com\mycompany\college_is\cross button.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Clear table"/>
           </Properties>
@@ -615,6 +621,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="0"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\Emerging Coursework\College_IS\src\main\java\com\mycompany\college_is\search.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Search college by category"/>
           </Properties>
           <Events>
@@ -625,6 +634,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="0"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\Emerging Coursework\College_IS\src\main\java\com\mycompany\college_is\search.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Search college by fee"/>
           </Properties>
@@ -783,7 +795,7 @@
                   <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
                   <Component id="deleteButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                  <Component id="exitButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="exitButton" min="-2" pref="80" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -804,6 +816,12 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="deleteButton">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="11" style="0"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\Emerging Coursework\College_IS\src\main\java\com\mycompany\college_is\delete.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Delete Row"/>
           </Properties>
           <Events>
@@ -812,6 +830,12 @@
         </Component>
         <Component class="javax.swing.JButton" name="exitButton">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="11" style="0"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\Emerging Coursework\College_IS\src\main\java\com\mycompany\college_is\cross button.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Exit"/>
           </Properties>
           <Events>
